@@ -46,6 +46,7 @@ module JavaBuildpack
         @droplet.java_opts.add_system_property('newrelic.config.proxy_user', '$WEB_PROXY_USER') if !proxy_user.nil? and !proxy_user.empty?
         @droplet.java_opts.add_system_property('newrelic.config.proxy_password', '$WEB_PROXY_PASS') if !proxy_password.nil? and !proxy_password.empty?
         @droplet.java_opts.add_system_property('newrelic.config.proxy_port', '$WEB_PROXY_PORT') if !proxy_port.nil?
+        @droplet.java_opts.add_system_property('mcs.psp.endpoint.baseUrl.STAGE', 'http://stage-mcs-shop.cg.bskyb.com')
       end
 
       protected
