@@ -40,6 +40,7 @@ module JavaBuildpack
         .add_system_property('newrelic.config.app_name', "'#{application_name}'")
         .add_system_property('newrelic.config.log_file_path', logs_dir)
         .add_system_property('newrelic.config.log_level', "info")
+        .add_system_property('mcs.psp.endpoint.baseUrl.STAGE', "http://stage-mcs-shop.cg.bskyb.com")
         @droplet.java_opts.add_system_property('newrelic.enable.java.8', 'true') if @droplet.java_home.version[1] == '8'
         @droplet.java_opts.add_system_property('newrelic.config.proxy_host', '$WEB_PROXY_HOST') if !proxy_host.nil? and !proxy_host.empty?
         @droplet.java_opts.add_system_property('newrelic.config.proxy_user', '$WEB_PROXY_USER') if !proxy_user.nil? and !proxy_user.empty?
